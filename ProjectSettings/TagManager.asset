@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: PSControlsBG
+    uniqueID: 850281559
+    locked: 0
+  - name: PSControlsLvl1
+    uniqueID: 507634405
+    locked: 0
