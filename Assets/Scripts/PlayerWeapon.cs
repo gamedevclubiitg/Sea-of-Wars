@@ -12,6 +12,7 @@ public class PlayerWeapon : MonoBehaviour
       if(Input.GetKeyDown(KeyCode.Space) && isEquipped){
       
       Debug.Log("weapon fired");
+      
       isEquipped=false;
       }
 

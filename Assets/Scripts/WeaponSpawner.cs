@@ -21,7 +21,7 @@ public class WeaponSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!Physics.CheckSphere (spawnPos, radius) && !spawnCalled) {
+        if (!Physics2D.OverlapCircle(spawnPos, radius) && !spawnCalled) {
         // found something
         Invoke(nameof(Spawn),delay);
         spawnCalled=true;
