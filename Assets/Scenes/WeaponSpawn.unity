@@ -338,9 +338,10 @@ GameObject:
   - component: {fileID: 786270581}
   - component: {fileID: 786270582}
   - component: {fileID: 786270583}
+  - component: {fileID: 786270584}
   m_Layer: 0
   m_Name: PlayerShip1
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -838,6 +839,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls: {fileID: 0}
   speed: 0.5
+--- !u!114 &786270584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 786270577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef4fc7aa4123b419967bbdd50f7998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEquipped: 0
+  currentWeapon: {fileID: 0}
+--- !u!1 &861760216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 861760217}
+  m_Layer: 0
+  m_Name: Spawners
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &861760217
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 861760216}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.12, y: -0.18, z: -9.206749}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1148601180}
+  - {fileID: 1135319020}
+  m_Father: {fileID: 1486147742}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &887164177
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,9 +899,10 @@ GameObject:
   - component: {fileID: 887164179}
   - component: {fileID: 887164178}
   - component: {fileID: 887164183}
+  - component: {fileID: 887164184}
   m_Layer: 0
   m_Name: PlayerShip3
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1351,6 +1400,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls: {fileID: 0}
   speed: 0.5
+--- !u!114 &887164184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887164177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef4fc7aa4123b419967bbdd50f7998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEquipped: 0
+  currentWeapon: {fileID: 0}
 --- !u!1 &1054705958
 GameObject:
   m_ObjectHideFlags: 0
@@ -1923,6 +1986,102 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!1 &1135319019
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1135319020}
+  - component: {fileID: 1135319021}
+  m_Layer: 0
+  m_Name: Spawn2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1135319020
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135319019}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.04, y: -0.62, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 861760217}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1135319021
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135319019}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d1e4e0d6b33f94cad3c4459431581d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+  - {fileID: 7150373901957801174, guid: 83f917df35d8fb44cbe6b7a3b318def9, type: 3}
+  - {fileID: 6227852149136203783, guid: 64db5d81d9657cc4ebbdf0080fa8bb01, type: 3}
+  delay: 3
+--- !u!1 &1148601179
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1148601180}
+  - component: {fileID: 1148601181}
+  m_Layer: 0
+  m_Name: Spawn1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1148601180
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148601179}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.27, y: 1.16, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 861760217}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1148601181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1148601179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d1e4e0d6b33f94cad3c4459431581d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  item:
+  - {fileID: 7150373901957801174, guid: 83f917df35d8fb44cbe6b7a3b318def9, type: 3}
+  - {fileID: 6227852149136203783, guid: 64db5d81d9657cc4ebbdf0080fa8bb01, type: 3}
+  delay: 3
 --- !u!1 &1216322292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1936,9 +2095,10 @@ GameObject:
   - component: {fileID: 1216322294}
   - component: {fileID: 1216322293}
   - component: {fileID: 1216322298}
+  - component: {fileID: 1216322299}
   m_Layer: 0
   m_Name: PlayerShip2
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2436,6 +2596,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controls: {fileID: 0}
   speed: 0.5
+--- !u!114 &1216322299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1216322292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cef4fc7aa4123b419967bbdd50f7998, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isEquipped: 0
+  currentWeapon: {fileID: 0}
 --- !u!1 &1486147741
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2643,7 @@ Transform:
   - {fileID: 1216322297}
   - {fileID: 887164182}
   - {fileID: 2125477809}
+  - {fileID: 861760217}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
