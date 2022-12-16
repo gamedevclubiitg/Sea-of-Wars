@@ -9,14 +9,15 @@ public class RoomManager : MonoBehaviourPunCallbacks
 {
     public static RoomManager Instance;
     public int gamelevel = 1;
+    public Transform[] spawnPoints;
     void Awake()
     {
-    if(Instance)
-    {
+        if (Instance)
+        {
             Destroy(gameObject);
-    }
-    DontDestroyOnLoad(gameObject);
-    Instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+        Instance = this;
     }
     public override void OnEnable()
     {
@@ -28,20 +29,22 @@ public class RoomManager : MonoBehaviourPunCallbacks
         SceneManager.sceneLoaded -= OnSceneLoaded;
         base.OnDisable();
     }
-    void OnSceneLoaded(Scene scene,LoadSceneMode loadSceneMode)
+    void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode)
     {
-        if(scene.buildIndex==gamelevel)
+        
+        if (scene.buildIndex == gamelevel)
         {
-            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"),Vector3.zero,Quaternion.identity);
+            PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
         }
     }
 
     void Start()
     {
-        
+
+
     }
     void Update()
     {
-        
+
     }
 }
