@@ -20,7 +20,8 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         GameObject bullet=Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(transform.right*bulletForce,ForceMode2D.Impulse);
+        bullet.GetComponent<Rigidbody2D>().AddForce(transform.up
+            *bulletForce,ForceMode2D.Impulse);
 
     }
     void Movement()
