@@ -35,6 +35,10 @@ public class ControlsMakerMultiPlayer : MonoBehaviour
         {
             canvas = tempObject;
         }
+        else
+        {
+            Debug.Log("hello");
+        }
     }
 
     void AttachControlls()

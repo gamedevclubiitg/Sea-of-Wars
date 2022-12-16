@@ -39,7 +39,6 @@ public class RoomManager : MonoBehaviourPunCallbacks
             if (instance.GetComponent<PhotonView>().Controller == PhotonNetwork.MasterClient) ;
             {
                 Button _button = button.GetComponent<Button>();
-
                 _button.onClick.AddListener(instance.GetComponent<PlayerManager>().PlayerControllerPosition);
             }
 

@@ -23,6 +23,7 @@ public class PlayerManager : MonoBehaviour
             PV.RPC("InstantiationPlayer", pl, index);
             index++;
         }
+        MenuManager.Instance.OpenMenu("game");
     }
     [PunRPC]
     void InstantiationPlayer(int index)
