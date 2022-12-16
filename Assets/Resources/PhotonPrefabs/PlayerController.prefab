@@ -423,7 +423,7 @@ Transform:
   m_GameObject: {fileID: 3742693111390872293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.07000004, y: 0.07000004, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1822699976281242137}
@@ -442,7 +442,7 @@ GameObject:
   - component: {fileID: 3742693111596673690}
   - component: {fileID: 3742693111596673684}
   - component: {fileID: 3742693111596673687}
-  - component: {fileID: 3742693111596673688}
+  - component: {fileID: 1004858417318992296}
   m_Layer: 0
   m_Name: PlayerShip2
   m_TagString: Untagged
@@ -929,7 +929,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3742693111596673688
+--- !u!114 &1004858417318992296
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3742693111596673686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ce0e59ff6ad88e459bcfdec9f553f6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b3d954d2a22bc8418e5acf2a2fc93f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controls: {fileID: 0}
@@ -1052,7 +1052,7 @@ Transform:
   m_GameObject: {fileID: 3742693112099265167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.07000004, y: 0.07000004, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2574713995448390149}
@@ -1071,7 +1071,7 @@ GameObject:
   - component: {fileID: 3742693112110610704}
   - component: {fileID: 3742693112110610711}
   - component: {fileID: 3742693112110610708}
-  - component: {fileID: 3742693112110610709}
+  - component: {fileID: 3553720344875065964}
   m_Layer: 0
   m_Name: PlayerShip1
   m_TagString: Untagged
@@ -1558,7 +1558,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3742693112110610709
+--- !u!114 &3553720344875065964
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1567,7 +1567,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3742693112110610707}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ce0e59ff6ad88e459bcfdec9f553f6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b3d954d2a22bc8418e5acf2a2fc93f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controls: {fileID: 0}
@@ -1598,7 +1598,7 @@ Transform:
   m_GameObject: {fileID: 3742693112151634371}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3742693111857093949}
@@ -1635,7 +1635,7 @@ GameObject:
   - component: {fileID: 3742693112210521463}
   - component: {fileID: 3742693112210521457}
   - component: {fileID: 3742693112210521456}
-  - component: {fileID: 3742693112210521461}
+  - component: {fileID: 7597656922690152828}
   m_Layer: 0
   m_Name: PlayerShip3
   m_TagString: Untagged
@@ -2122,7 +2122,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3742693112210521461
+--- !u!114 &7597656922690152828
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2131,7 +2131,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3742693112210521459}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ce0e59ff6ad88e459bcfdec9f553f6c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7b3d954d2a22bc8418e5acf2a2fc93f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controls: {fileID: 0}
@@ -2146,8 +2146,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3742693112477241535}
   - component: {fileID: 3742693112477241532}
-  - component: {fileID: 3742693112543899748}
   - component: {fileID: 3742693112543899749}
+  - component: {fileID: 4433885576349681591}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -2192,24 +2192,6 @@ MonoBehaviour:
   - {fileID: 3742693112812762682}
   - {fileID: 3742693111390872293}
   - {fileID: 3742693112099265167}
---- !u!114 &3742693112543899748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742693112477241534}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 312f47f35632bc8428cb3cab08e8b327, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PSControls: {fileID: 7827108622230606237, guid: 44899a1805e93f8419d2567b8fcedb2e, type: 3}
-  PSControlsVersion: 2
-  PlayerShip1: {fileID: 3742693112110610707}
-  PlayerShip2: {fileID: 3742693111596673686}
-  PlayerShip3: {fileID: 3742693112210521459}
-  canvas: {fileID: 0}
 --- !u!114 &3742693112543899749
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2232,6 +2214,24 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &4433885576349681591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3742693112477241534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7120c546723c26045ac049e5690178c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PSControls: {fileID: 7827108622230606237, guid: 44899a1805e93f8419d2567b8fcedb2e, type: 3}
+  PSControlsVersion: 2
+  PlayerShip1: {fileID: 3742693112110610707}
+  PlayerShip2: {fileID: 3742693111596673686}
+  PlayerShip3: {fileID: 3742693112210521459}
+  canvas: {fileID: 7827108622230606237, guid: 44899a1805e93f8419d2567b8fcedb2e, type: 3}
 --- !u!1 &3742693112718013892
 GameObject:
   m_ObjectHideFlags: 0
@@ -2341,7 +2341,7 @@ Transform:
   m_GameObject: {fileID: 3742693112812762682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.5, y: 0, z: 0}
-  m_LocalScale: {x: 0.07000004, y: 0.07000004, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3742693112151634368}
@@ -2458,7 +2458,7 @@ Transform:
   m_GameObject: {fileID: 4276421706661738781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3545978508663138229}
@@ -2624,7 +2624,7 @@ Transform:
   m_GameObject: {fileID: 7056389976852997266}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalScale: {x: 0.07, y: 0.07, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7366308423598781589}
