@@ -463,6 +463,18 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 362624617}
     - target: {fileID: 8958663073350387093, guid: df3a375411061bd498f3c474810cfdd2, type: 3}
+      propertyPath: enemyLayer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958663073350387093, guid: df3a375411061bd498f3c474810cfdd2, type: 3}
+      propertyPath: playerLayer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958663073350387093, guid: df3a375411061bd498f3c474810cfdd2, type: 3}
+      propertyPath: playerShootingLayer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8958663073350387093, guid: df3a375411061bd498f3c474810cfdd2, type: 3}
       propertyPath: spawnPoints.Array.size
       value: 2
       objectReference: {fileID: 0}

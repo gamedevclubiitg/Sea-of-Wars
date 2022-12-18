@@ -46,6 +46,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamelevel: 1
+  spawnPoints: []
+  button: {fileID: 0}
+  playerLayer: 0
+  playerShootingLayer: 0
 --- !u!114 &8958663073350387092
 MonoBehaviour:
   m_ObjectHideFlags: 0

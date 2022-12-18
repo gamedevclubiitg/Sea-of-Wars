@@ -12,6 +12,8 @@ public class RoomManager : MonoBehaviourPunCallbacks
     public int gamelevel = 1;
     public Transform[] spawnPoints;
     public Button button;
+    public int playerLayer;
+    public int playerShootingLayer;
     void Awake()
     {
         if (Instance)

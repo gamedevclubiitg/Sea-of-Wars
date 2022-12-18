@@ -6,24 +6,37 @@ using UnityEngine;
 
 public class ShootingMultiPlayer : MonoBehaviour
 {
-    public Transform firepoint;
+   [SerializeField] Transform firePoint;
     public GameObject bulletPrefab;
-    public float bulletForce = 100f;
+    private float bulletForce = 10f;
     public Vector3 rotation = new Vector3(0, 0, 5);
+    PhotonView PV;
+    [SerializeField]
+    int shootingLayer;
+    void Start()
+    {
+        shootingLayer=gameObject.layer+2;
+        firePoint = gameObject.transform.GetChild(1).transform;
+        PV = GetComponent<PhotonView>();
+    }
     void Update()
     {
-        if(Input.GetKeyDown("space"))
+        if (PV.IsMine)
         {
-            Shoot();
+            if (Input.GetKeyDown("space"))
+            {
+                Shoot();
+            }
+            Movement();
         }
-        Movement();
     }
     void Shoot()
     {
-        GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BulletPrefabMultiPlayer"), firepoint.position, firepoint.rotation);
+        GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BulletPrefabMultiPlayer"), firePoint.position, firePoint.rotation);
+        bullet.layer=shootingLayer;
+        Debug.Log(bullet.layer);
         bullet.GetComponent<Rigidbody2D>().AddForce(transform.up
-            *bulletForce,ForceMode2D.Impulse);
-
+          * bulletForce, ForceMode2D.Impulse);
     }
     void Movement()
     {
