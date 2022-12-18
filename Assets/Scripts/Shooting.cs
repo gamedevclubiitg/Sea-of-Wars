@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     public GameObject bulletPrefab;
     public float bulletForce = 100f;
     public Vector3 rotation = new Vector3(0, 0, 5);
+   
     void Update()
     {
         if(Input.GetKeyDown("space"))
@@ -19,8 +20,8 @@ public class Shooting : MonoBehaviour
     void Shoot()
     {
         GameObject bullet=Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
-        bullet.GetComponent<Rigidbody2D>().AddForce(transform.up
-            *bulletForce,ForceMode2D.Impulse);
+        bullet.GetComponent<Rigidbody2D>().AddForce(transform.up*bulletForce,ForceMode2D.Impulse);
+        bullet.layer = 9;
 
     }
     void Movement()
