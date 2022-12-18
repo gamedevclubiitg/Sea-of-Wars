@@ -26,7 +26,7 @@ public class GunManager : MonoBehaviour
     {
         for(int i = 0; i < GunHolders.Length; i++)
         {
-            Shooting childScript= GunHolders[i].GetComponentInChildren<Shooting>();
+            ShootingMultiPlayer childScript= GunHolders[i].GetComponentInChildren<ShootingMultiPlayer>();
           
            if(i+1==num)
             {

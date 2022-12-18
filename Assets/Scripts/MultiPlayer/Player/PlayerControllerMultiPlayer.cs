@@ -13,10 +13,12 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
     public GameObject PSControls;
     public GameObject[] PlayerShips; 
     public GameObject canvas;
-    public List<GameObject> _PSControls = new List<GameObject>();
+    private List<GameObject> _PSControls = new List<GameObject>();
+    [SerializeField]
     private float rotationSpeed = 10f;
     [SerializeField]
     private float speed = 0.5f;
+    [SerializeField]
     private float currentSpeed = 0f;
     PhotonView PV;
     void Start()
@@ -33,11 +35,48 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
     {
         if(PV.IsMine)
         {
-            Movement(_PSControls[0], PlayerShips[0]);
-            Movement(_PSControls[1], PlayerShips[1]);
-            Movement(_PSControls[2], PlayerShips[2]);
+            for (int i = 0; i < PlayerShips.Length; i++)
+            {
+                Movement(_PSControls[i], PlayerShips[i]);
+            }
+            ActivateShip();
         }
 
+    }
+
+    private void ActivateShip()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            ShootingAttach(1);
+            Debug.Log("hello");
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            ShootingAttach(2);
+        }
+        else if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            ShootingAttach(3);
+        }
+    }
+
+    private void ShootingAttach(int num)
+    {
+        for (int i = 0; i <PlayerShips.Length; i++)
+        {
+            GameObject gunHolder = PlayerShips[i].transform.GetChild(1).gameObject;
+            ShootingMultiPlayer childScript = gunHolder.GetComponentInChildren<ShootingMultiPlayer>();
+
+            if (i + 1 == num)
+            {
+                childScript.enabled = true;
+            }
+            else
+            {
+                childScript.enabled = false;
+            }
+        }
     }
 
     private void Movement(GameObject controls, GameObject playerShip)

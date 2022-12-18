@@ -1,8 +1,10 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
-public class Shooting: MonoBehaviour
+public class ShootingMultiPlayer : MonoBehaviour
 {
     public Transform firepoint;
     public GameObject bulletPrefab;
@@ -18,7 +20,7 @@ public class Shooting: MonoBehaviour
     }
     void Shoot()
     {
-        GameObject bullet=Instantiate(bulletPrefab, firepoint.position, firepoint.rotation);
+        GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BulletPrefabMultiPlayer"), firepoint.position, firepoint.rotation);
         bullet.GetComponent<Rigidbody2D>().AddForce(transform.up
             *bulletForce,ForceMode2D.Impulse);
 
