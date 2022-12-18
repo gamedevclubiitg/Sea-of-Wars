@@ -961,8 +961,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menus:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 744631506}
+  - {fileID: 1142950764}
 --- !u!1 &1895061848
 GameObject:
   m_ObjectHideFlags: 0

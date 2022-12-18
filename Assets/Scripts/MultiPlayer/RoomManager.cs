@@ -36,7 +36,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
         if (scene.buildIndex == gamelevel)
         {
             GameObject instance = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerManager"), Vector3.zero, Quaternion.identity);
-            if (instance.GetComponent<PhotonView>().Controller == PhotonNetwork.MasterClient) ;
+            if (instance.GetComponent<PhotonView>().Controller == PhotonNetwork.MasterClient) 
             {
                 Button _button = button.GetComponent<Button>();
                 _button.onClick.AddListener(instance.GetComponent<PlayerManager>().PlayerControllerPosition);
