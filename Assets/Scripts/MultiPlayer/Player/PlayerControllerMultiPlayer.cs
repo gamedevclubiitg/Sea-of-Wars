@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,6 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
     public GameObject canvas;
     public List<GameObject> _PSControls = new List<GameObject>();
     private float rotationSpeed = 10f;
-    private float rotZ = 90f;
     [SerializeField]
     private float speed = 0.5f;
     private float currentSpeed = 0f;
@@ -27,20 +27,28 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
         if(PV.IsMine)
         {
             AttachControlls();
+        }
+    }
+    void Update()
+    {
+        if(PV.IsMine)
+        {
             Movement(_PSControls[0], PlayerShips[0]);
             Movement(_PSControls[1], PlayerShips[1]);
             Movement(_PSControls[2], PlayerShips[2]);
         }
+
     }
 
     private void Movement(GameObject controls, GameObject playerShip)
     {
-        if (controls.GetComponent<DragKnob>()!=null&&playerShip!=null)
+        float rotZ = 0;
+        if (controls.GetComponentInChildren<DragKnob>()!=null&&playerShip!=null)
         {
-            float angleChange = Vector3.SignedAngle(transform.right, controls.GetComponent<DragKnob>().clampedDistance, new Vector3(0, 0, 1));
+            float angleChange = Vector3.SignedAngle(transform.right, controls.GetComponentInChildren<DragKnob>().clampedDistance, new Vector3(0, 0, 1));
             if (Mathf.Abs(angleChange) != 0)
             {
-                Debug.Log(angleChange);
+              
                 if (angleChange >= 0)
                 {
                     rotZ += Time.deltaTime * rotationSpeed;
@@ -50,8 +58,8 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
                     rotZ -= Time.deltaTime * rotationSpeed;
                 }
             }
-            playerShip.transform.rotation = Quaternion.Euler(0, 0, rotZ);
-            float velocityMagnitude = controls.GetComponent<DragKnob>().velocityMagnitude;
+            playerShip.transform.Rotate(0,0,rotZ);
+            float velocityMagnitude = controls.GetComponentInChildren<DragKnob>().velocityMagnitude;
             if (velocityMagnitude < 0.05)
             {
                 velocityMagnitude = 0;
@@ -64,6 +72,10 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
             var newYPos = playerShip.transform.position.y + translation * playerShip.transform.right.y;
 
             playerShip.transform.position = new Vector2(newXPos, newYPos);
+        }
+        else
+        {
+            Debug.Log("hleopop");
         }
     }
 
