@@ -6,8 +6,15 @@ using UnityEngine;
 
 public class BulletMultiPlayer : MonoBehaviour
 {
-    void OnCollisionEnter2D(Collision2D collision)
-    { 
+    void onTriggerEnter2D(Collision2D collision)
+    {
+        Debug.Log("hello Im from on Trigger");
         PhotonNetwork.Destroy(gameObject);
     }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        Debug.Log("hello Im from oon entee collision2d");
+        PhotonNetwork.Destroy(gameObject);
+    }
+
 }
