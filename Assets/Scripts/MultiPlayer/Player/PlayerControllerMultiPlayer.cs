@@ -84,7 +84,8 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
         float rotZ = 0;
         if (controls.GetComponentInChildren<DragKnob>()!=null&&playerShip!=null)
         {
-            float angleChange = Vector3.SignedAngle(transform.right, controls.GetComponentInChildren<DragKnob>().clampedDistance, new Vector3(0, 0, 1));
+            float angleChange = Vector3.SignedAngle(playerShip.transform.right, controls.GetComponentInChildren<DragKnob>().clampedDistance, new Vector3(0, 0, 1));
+
             if (Mathf.Abs(angleChange) != 0)
             {
               
