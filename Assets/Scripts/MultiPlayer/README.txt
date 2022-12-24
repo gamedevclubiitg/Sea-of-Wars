@@ -26,4 +26,12 @@
 17 => So I kept the knob in the prefabs
 18 => Photon views enables us to synchronise the movements along the network
 19 => and Photon transform classic View is observed component by photon view of the gameObject
-20=> Photon Network.destroy enabales to destroy the gameObject
+20 => Photon Network.destroy enabales to destroy the gameObject
+21 => added 3 tags for ships
+=========================
+Things to do:
+1 => calling damage RPC according to the ship tag
+2 => player disconnects handling
+3 => score system
+4 => Instantiating the ships with props if required
+5 => game finishing score table

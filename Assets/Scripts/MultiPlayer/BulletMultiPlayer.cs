@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class BulletMultiPlayer : MonoBehaviour
 {
+    public float damage = 0.01f;
     PhotonView PV;
     void Awake()
     {
@@ -22,7 +23,14 @@ public class BulletMultiPlayer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        if (!PV.IsMine)
+            return;
+        PhotonView target=collision.gameObject.GetComponent<PhotonView>();  
+
+        if(target!= null&&(!target.IsMine||target.IsRoomView))
+        {
+            target.RPC("ReduceHealth",RpcTarget.AllBuffered, damage) ;
+        }
         PhotonNetwork.Destroy(gameObject);
     }
    
