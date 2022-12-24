@@ -276,7 +276,6 @@ GameObject:
   - component: {fileID: 3742693111596673687}
   - component: {fileID: 3647884045211707061}
   - component: {fileID: 4666790127007003373}
-  - component: {fileID: 407117691151253356}
   m_Layer: 0
   m_Name: PlayerShip2
   m_TagString: Ship 2
@@ -820,19 +819,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &407117691151253356
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742693111596673686}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1aff66bc8c29d4a82906e30c6cdeca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FillImage: {fileID: 8942781556933255765}
 --- !u!1 &3742693111857093948
 GameObject:
   m_ObjectHideFlags: 0
@@ -963,7 +949,6 @@ GameObject:
   - component: {fileID: 3742693112110610708}
   - component: {fileID: 5957555485132439332}
   - component: {fileID: 3026296940964826264}
-  - component: {fileID: 8982462538201796379}
   m_Layer: 0
   m_Name: PlayerShip1
   m_TagString: Ship 1
@@ -1507,19 +1492,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &8982462538201796379
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742693112110610707}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1aff66bc8c29d4a82906e30c6cdeca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FillImage: {fileID: 2888086639440795729}
 --- !u!1 &3742693112151634371
 GameObject:
   m_ObjectHideFlags: 0
@@ -1642,7 +1614,6 @@ GameObject:
   - component: {fileID: 3742693112210521456}
   - component: {fileID: 9177742592432900403}
   - component: {fileID: 6565983238474638352}
-  - component: {fileID: 9150864352981128032}
   m_Layer: 0
   m_Name: PlayerShip3
   m_TagString: Ship 3
@@ -2186,19 +2157,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &9150864352981128032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3742693112210521459}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc1aff66bc8c29d4a82906e30c6cdeca, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FillImage: {fileID: 4791561248404188733}
 --- !u!1 &3742693112477241534
 GameObject:
   m_ObjectHideFlags: 0
@@ -2269,15 +2227,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7120c546723c26045ac049e5690178c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 7827108622230606237, guid: 8a24550732e3c0f4d88f08de2ea3f1c7, type: 3}
   PSControls: {fileID: 7827108622230606237, guid: 44899a1805e93f8419d2567b8fcedb2e, type: 3}
   PlayerShips:
   - {fileID: 3742693112110610707}
   - {fileID: 3742693111596673686}
   - {fileID: 3742693112210521459}
-  canvas: {fileID: 7827108622230606237, guid: 8a24550732e3c0f4d88f08de2ea3f1c7, type: 3}
   rotationSpeed: 10
   speed: 0.5
   currentSpeed: 0
+  healths: 640000006400000064000000
+  _FillImages: []
 --- !u!1 &3742693112812762682
 GameObject:
   m_ObjectHideFlags: 0
@@ -2903,6 +2863,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBarCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6321568217396840053, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
 --- !u!224 &2003807118311814169 stripped
@@ -2910,17 +2874,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 453476394230380884, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
   m_PrefabInstance: {fileID: 2127354432784928077}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4791561248404188733 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6916097482021086064, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
-  m_PrefabInstance: {fileID: 2127354432784928077}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &2585574666135191845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3016,6 +2969,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBarCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6321568217396840053, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
 --- !u!224 &2714223710262048881 stripped
@@ -3023,17 +2980,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 453476394230380884, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
   m_PrefabInstance: {fileID: 2585574666135191845}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &8942781556933255765 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6916097482021086064, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
-  m_PrefabInstance: {fileID: 2585574666135191845}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &8641951918022507297
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3129,19 +3075,12 @@ PrefabInstance:
       propertyPath: m_Name
       value: HealthBarCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6321568217396840053, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
---- !u!114 &2888086639440795729 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6916097482021086064, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}
-  m_PrefabInstance: {fileID: 8641951918022507297}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &8189078060459147893 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 453476394230380884, guid: a29d501bd86107d4b8fade0aca4cbf20, type: 3}

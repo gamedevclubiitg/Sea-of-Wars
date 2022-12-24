@@ -1,4 +1,5 @@
 using Photon.Pun;
+using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using UnityEngine;
 
 public class BulletMultiPlayer : MonoBehaviour
 {
-    public float damage = 0.01f;
+    public float damage = 10f;
     PhotonView PV;
     void Awake()
     {
@@ -23,16 +24,17 @@ public class BulletMultiPlayer : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!PV.IsMine)
-            return;
-        PhotonView target=collision.gameObject.GetComponent<PhotonView>();  
-
-        if(target!= null&&(!target.IsMine||target.IsRoomView))
+        PhotonView target = collision.GetComponent<PhotonView>();
+        foreach(Player pl in PhotonNetwork.PlayerList)
         {
-            target.RPC("ReduceHealth",RpcTarget.AllBuffered, damage) ;
+            if (pl.IsLocal == true)
+                continue;
+            if(pl.IsLocal==false)
+            {
+                PV.RPC("ReduceHealth",pl,damage,collision.tag);
+                break;
+            }
         }
         PhotonNetwork.Destroy(gameObject);
     }
-   
-
 }

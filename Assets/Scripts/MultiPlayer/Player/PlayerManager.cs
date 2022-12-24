@@ -33,6 +33,6 @@ public class PlayerManager : MonoBehaviour
         GameObject playerController = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "PlayerController"), roomManager.GetComponent<RoomManager>().spawnPoints[index].position,Quaternion.Euler(0,0,index*180f));
         MenuManager.Instance.OpenMenu("game");
     }
-   
-    
+
+
 }

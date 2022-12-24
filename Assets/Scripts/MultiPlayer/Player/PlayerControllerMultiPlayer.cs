@@ -1,18 +1,16 @@
 using Photon.Pun;
+using Photon.Realtime;
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.IO;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class PlayerControllerMultiPlayer : MonoBehaviour
 {
-    public GameObject PSControls;
-    public GameObject[] PlayerShips; 
     public GameObject canvas;
+    public GameObject PSControls;
+    public GameObject[] PlayerShips;
     private List<GameObject> _PSControls = new List<GameObject>();
     [SerializeField]
     private float rotationSpeed = 10f;
@@ -20,8 +18,10 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
     private float speed = 0.5f;
     [SerializeField]
     private float currentSpeed = 0f;
+    public List <int> healths=new List<int>{ 100,100,100};
+    [SerializeField]
+    List<Image>_FillImages=new List<Image>();
     PhotonView PV;
-
     void Awake()
     {
         GameObject roomManager = GameObject.Find("RoomManager");
@@ -34,17 +34,21 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
         {
             SetGameLayerRecursive(gameObject, roomManager.GetComponent<RoomManager>().enemyLayer);
         }
+
     }
     void Start()
     {
         FindCanvas();
+        FindHealthBars();
         
 
         if(PV.IsMine)
         {
             AttachControlls();
         }
+ 
     }
+
     void Update()
     {
         if(PV.IsMine)
@@ -57,6 +61,7 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
         }
 
     }
+    
 
     private void ActivateShip()
     {
@@ -145,6 +150,16 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
             Debug.Log("hello");
         }
     }
+    void FindHealthBars()
+    {
+        for(int i=0;i<PlayerShips.Length;i++)
+        {
+            GameObject tempCanvas = PlayerShips[i].transform.GetChild(0).gameObject;
+            Image outlineImage=tempCanvas.transform.GetChild(0).GetComponentInChildren<Image>();
+            Image fillImage=outlineImage.transform.GetChild(0).GetComponentInChildren<Image>();
+            _FillImages.Add(fillImage);
+        }
+    }
 
     void AttachControlls()
     {
@@ -176,6 +191,22 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
                 SetGameLayerRecursive(child.gameObject, _layer);
 
         }
+    }
+    //health RPC
+    [PunRPC]
+    void ReduceHealth(float amount, string tag)
+    {
+
+        ModifyHealth(amount, tag);
+    }
+
+    void ModifyHealth(float amount, string tag)
+    {
+
+        if (!PV.IsMine)
+            return;
+        int id = int.Parse(tag.Substring(4));
+        Debug.Log(id+" "+tag);
     }
 
 }
