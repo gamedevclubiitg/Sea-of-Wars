@@ -1713,7 +1713,6 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   bulletPrefab: {fileID: 7733544223044962343, guid: 3d2da9acc5a218744a4286669b908bbe, type: 3}
   rotation: {x: 0, y: 0, z: 5}
-  shootingLayer: 0
 --- !u!114 &8058030578866969753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2658,7 +2657,6 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   bulletPrefab: {fileID: 7733544223044962343, guid: 3d2da9acc5a218744a4286669b908bbe, type: 3}
   rotation: {x: 0, y: 0, z: 5}
-  shootingLayer: 0
 --- !u!114 &283002918978507036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2881,7 +2879,6 @@ MonoBehaviour:
   firePoint: {fileID: 0}
   bulletPrefab: {fileID: 7733544223044962343, guid: 3d2da9acc5a218744a4286669b908bbe, type: 3}
   rotation: {x: 0, y: 0, z: 5}
-  shootingLayer: 0
 --- !u!114 &2574474891025474621
 MonoBehaviour:
   m_ObjectHideFlags: 0
