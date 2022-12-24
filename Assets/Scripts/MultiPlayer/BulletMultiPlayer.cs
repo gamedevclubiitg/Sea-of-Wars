@@ -6,6 +6,20 @@ using UnityEngine;
 
 public class BulletMultiPlayer : MonoBehaviour
 {
+    PhotonView PV;
+    void Awake()
+    {
+        GameObject roomManager = GameObject.Find("RoomManager");
+        PV = GetComponent<PhotonView>();
+        if (PV.Controller == PhotonNetwork.MasterClient)
+        {
+            gameObject.layer = roomManager.GetComponent<RoomManager>().playerShootingLayer;
+        }
+        else
+        {
+            gameObject.layer = roomManager.GetComponent<RoomManager>().enemyShootingLayer;
+        }
+    }
     void onTriggerEnter2D(Collision2D collision)
     {
         Debug.Log("hello Im from on Trigger");

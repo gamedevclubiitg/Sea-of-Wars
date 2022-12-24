@@ -11,13 +11,10 @@ public class ShootingMultiPlayer : MonoBehaviour
     private float bulletForce = 10f;
     public Vector3 rotation = new Vector3(0, 0, 5);
     PhotonView PV;
-    [SerializeField]
-    int shootingLayer;
-    void Start()
+    void Awake()
     {
-        shootingLayer=gameObject.layer+2;
+        PV = gameObject.GetComponent<PhotonView>();
         firePoint = gameObject.transform.GetChild(1).transform;
-        PV = GetComponent<PhotonView>();
     }
     void Update()
     {
@@ -33,8 +30,6 @@ public class ShootingMultiPlayer : MonoBehaviour
     void Shoot()
     {
         GameObject bullet = PhotonNetwork.Instantiate(Path.Combine("PhotonPrefabs", "BulletPrefabMultiPlayer"), firePoint.position, firePoint.rotation);
-        bullet.layer=shootingLayer;
-        Debug.Log(bullet.layer);
         bullet.GetComponent<Rigidbody2D>().AddForce(transform.up
           * bulletForce, ForceMode2D.Impulse);
     }

@@ -21,10 +21,24 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
     [SerializeField]
     private float currentSpeed = 0f;
     PhotonView PV;
+
+    void Awake()
+    {
+        GameObject roomManager = GameObject.Find("RoomManager");
+        PV = GetComponent<PhotonView>();
+        if(PV.Controller==PhotonNetwork.MasterClient)
+        {
+            SetGameLayerRecursive(gameObject,roomManager.GetComponent<RoomManager>().playerLayer);
+        }
+        else
+        {
+            SetGameLayerRecursive(gameObject, roomManager.GetComponent<RoomManager>().enemyLayer);
+        }
+    }
     void Start()
     {
         FindCanvas();
-        PV =GetComponent<PhotonView>();
+        
 
         if(PV.IsMine)
         {
@@ -49,7 +63,7 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             ShootingAttach(1);
-            Debug.Log("hello");
+            
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -148,6 +162,19 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
             _PSControls[i].name = "PSControls " + i;
             SpriteRenderer _tempSprite = _PSControls[i].transform.GetChild(0).GetComponentInChildren<SpriteRenderer>();
             _tempSprite.color = colors[i];
+        }
+    }
+    private void SetGameLayerRecursive(GameObject _go, int _layer)
+    {
+        _go.layer = _layer;
+        foreach (Transform child in _go.transform)
+        {
+            child.gameObject.layer = _layer;
+
+            Transform _HasChildren = child.GetComponentInChildren<Transform>();
+            if (_HasChildren != null)
+                SetGameLayerRecursive(child.gameObject, _layer);
+
         }
     }
 

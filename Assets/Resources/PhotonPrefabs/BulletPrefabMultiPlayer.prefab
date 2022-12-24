@@ -10,11 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 7733544223044962329}
   - component: {fileID: 7733544223044962328}
-  - component: {fileID: -4476754392694757817}
   - component: {fileID: 4628337577773883127}
   - component: {fileID: -5852364198147262917}
   - component: {fileID: 7023689164106398659}
   - component: {fileID: 879302685221598466}
+  - component: {fileID: 1553067639375658420}
   m_Layer: 0
   m_Name: BulletPrefabMultiPlayer
   m_TagString: Untagged
@@ -89,18 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-4476754392694757817
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7733544223044962343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04d566954b7af094db5db7bd10db67cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &4628337577773883127
 Rigidbody2D:
   serializedVersion: 4
@@ -204,3 +192,15 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
+--- !u!114 &1553067639375658420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7733544223044962343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e13784dfeaa4c94a89a9a19aad8990f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
