@@ -18,28 +18,24 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
     private float speed = 0.5f;
     [SerializeField]
     private float currentSpeed = 0f;
-    public List <int> healths=new List<int>{ 100,100,100};
-    [SerializeField]
-    List<Image>_FillImages=new List<Image>();
     PhotonView PV;
     void Awake()
     {
-        GameObject roomManager = GameObject.Find("RoomManager");
         PV = GetComponent<PhotonView>();
         if(PV.Controller==PhotonNetwork.MasterClient)
         {
-            SetGameLayerRecursive(gameObject,roomManager.GetComponent<RoomManager>().playerLayer);
+            SetGameLayerRecursive(gameObject,RoomManager.Instance.playerLayer);
         }
         else
         {
-            SetGameLayerRecursive(gameObject, roomManager.GetComponent<RoomManager>().enemyLayer);
+            SetGameLayerRecursive(gameObject, RoomManager.Instance.enemyLayer);
         }
 
     }
     void Start()
     {
         FindCanvas();
-        FindHealthBars();
+       
         
 
         if(PV.IsMine)
@@ -150,17 +146,7 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
             Debug.Log("hello");
         }
     }
-    void FindHealthBars()
-    {
-        for(int i=0;i<PlayerShips.Length;i++)
-        {
-            GameObject tempCanvas = PlayerShips[i].transform.GetChild(0).gameObject;
-            Image outlineImage=tempCanvas.transform.GetChild(0).GetComponentInChildren<Image>();
-            Image fillImage=outlineImage.transform.GetChild(0).GetComponentInChildren<Image>();
-            _FillImages.Add(fillImage);
-        }
-    }
-
+    
     void AttachControlls()
     {
        //Populating list
@@ -192,21 +178,4 @@ public class PlayerControllerMultiPlayer : MonoBehaviour
 
         }
     }
-    //health RPC
-    [PunRPC]
-    void ReduceHealth(float amount, string tag)
-    {
-
-        ModifyHealth(amount, tag);
-    }
-
-    void ModifyHealth(float amount, string tag)
-    {
-
-        if (!PV.IsMine)
-            return;
-        int id = int.Parse(tag.Substring(4));
-        Debug.Log(id+" "+tag);
-    }
-
 }

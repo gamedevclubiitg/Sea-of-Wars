@@ -27,11 +27,9 @@
 18 => Photon views enables us to synchronise the movements along the network
 19 => and Photon transform classic View is observed component by photon view of the gameObject
 20 => Photon Network.destroy enabales to destroy the gameObject
-21 => added 3 tags for ships
 =========================
 Things to do:
-1 => calling damage RPC according to the ship tag
-2 => player disconnects handling
-3 => score system
-4 => Instantiating the ships with props if required
-5 => game finishing score table
+1 => player disconnects handling
+2 => Instantiating the ships with props if required
+3 => Player ship respwaning after a relaxation time
+4 => game finishing score table

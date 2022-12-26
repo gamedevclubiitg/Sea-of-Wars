@@ -11,30 +11,23 @@ public class BulletMultiPlayer : MonoBehaviour
     PhotonView PV;
     void Awake()
     {
-        GameObject roomManager = GameObject.Find("RoomManager");
         PV = GetComponent<PhotonView>();
         if (PV.Controller == PhotonNetwork.MasterClient)
         {
-            gameObject.layer = roomManager.GetComponent<RoomManager>().playerShootingLayer;
+            gameObject.layer = RoomManager.Instance.playerShootingLayer;
         }
         else
         {
-            gameObject.layer = roomManager.GetComponent<RoomManager>().enemyShootingLayer;
+            gameObject.layer = RoomManager.Instance.enemyShootingLayer;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         PhotonView target = collision.GetComponent<PhotonView>();
-        foreach(Player pl in PhotonNetwork.PlayerList)
+        if (target != null && (!target.IsMine || !target.IsRoomView))
         {
-            if (pl.IsLocal == true)
-                continue;
-            if(pl.IsLocal==false)
-            {
-                PV.RPC("ReduceHealth",pl,damage,collision.tag);
-                break;
-            }
+            target.RPC("ReduceHealth", RpcTarget.AllBuffered, damage);
+            PhotonNetwork.Destroy(gameObject);
         }
-        PhotonNetwork.Destroy(gameObject);
     }
 }
